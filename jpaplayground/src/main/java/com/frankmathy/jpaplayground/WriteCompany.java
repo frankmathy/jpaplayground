@@ -4,9 +4,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import com.frankmathy.jpaplayground.model.Company;
 import com.frankmathy.jpaplayground.model.Person;
 
-public class Main {
+public class WriteCompany {
 
 	private static final String PERSISTENCE_UNIT_NAME = "persistence";
 	private static EntityManagerFactory factory;
@@ -20,10 +21,16 @@ public class Main {
 		
 		em.getTransaction().begin();
 		
+		Company company = new Company();
+		company.setName("ACME");
+		
 		Person p = new Person();
 		p.setFirstName("Frank");
 		p.setLastName("Mathy");
+		p.setCompany(company);
+		
 		em.persist(p);
+		em.persist(company);
 		
 		em.getTransaction().commit();
 		

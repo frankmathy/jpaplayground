@@ -4,6 +4,7 @@
 
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>com.frankmathy.jpaplayground.model.Person</class>
+		<class>com.frankmathy.jpaplayground.model.Company</class>
 
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
